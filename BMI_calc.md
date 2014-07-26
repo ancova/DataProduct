@@ -22,10 +22,14 @@ $$BMI =\frac{mass(kg)}{(height(m))^2}=\frac{mass(lb)}{(height(in))^2}\times7.03$
 R codes:
 
 ```r
-BMI <- reactive({
+library(shiny)
+shinyServer(
+    function(input, output) {
+    BMI <- reactive({
     if (input$Hunit=="Inches") height=0.0254*input$height else height=input$height
     if (input$Wunit=="Pounds") weight=0.4536*input$weight else weight=input$weight
     weight/height^2
+    })
 })
 ```
 

@@ -788,10 +788,14 @@ hljs.initHighlightingOnLoad();
 
 <p>R codes:</p>
 
-<pre><code class="r">BMI &lt;- reactive({
+<pre><code class="r">library(shiny)
+shinyServer(
+    function(input, output) {
+    BMI &lt;- reactive({
     if (input$Hunit==&quot;Inches&quot;) height=0.0254*input$height else height=input$height
     if (input$Wunit==&quot;Pounds&quot;) weight=0.4536*input$weight else weight=input$weight
     weight/height^2
+    })
 })
 </code></pre>
 
