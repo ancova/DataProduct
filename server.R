@@ -7,7 +7,7 @@ shinyServer(
             if (input$Hunit=="Inches") height=0.0254000*input$height else height=input$height
             if (input$Wunit=="Pounds") weight=0.4535924*input$weight else weight=input$weight
             weight/height^2
-        })
+        })        
         output$BMI <- renderPrint({round(BMI(),2)})
         output$Obes <- renderPrint({
             if (BMI()<18.5) Obes='underweight. Fatten yourself up!' else {

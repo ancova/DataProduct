@@ -4,7 +4,6 @@ author: Canqing YU
 date: July 25th, 2014
 transition: linear
 
-
 Background: About BMI (Body Mass Index).
 ========================================================
 
